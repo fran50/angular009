@@ -1,0 +1,14 @@
+
+<form [formGroup]="form" (ngSubmit)="save()">
+
+<input type="text" formControlName="nombre">
+<button (click)="anadirNuevaDirecion()">Añadir Direcciones</button>
+<div formArrayName="direccion" *ngFor="let direccion of direccionArchivos.controls; let i=index">
+    <div [formGroupName]="i">
+        <input type="text" formControlName="zip" placeholder="Direccion Zip">
+        <input type="text" formControlName="texto" placeholder="Direccion texto">
+    </div>
+</div>
+<!--<input type="text" formControlName="nombre">-->
+<button type="submit">enviar</button>
+</form>
